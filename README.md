@@ -1,3 +1,3 @@
 # LibraryPersianCalendar
 
-it is a simple persian calendarview. nearly will publish in jcenter or moven to be used easily.
+it is a simple jalali calendarview. it will publish in jcenter to be used easily.
