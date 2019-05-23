@@ -132,7 +132,7 @@ public class SimplePersianCalendarView extends RelativeLayout {
 
     private void setNextMonth() {
         increaseMonth();
-        day=1;
+        day = 1;
         weekDayNumber = daysList.size() % 7;
         setCalendarMonthList();
     }
@@ -151,7 +151,7 @@ public class SimplePersianCalendarView extends RelativeLayout {
         decreaseMonth();
         PersianDate persianDate = new PersianDate();
         persianDate.initJalaliDate(year, month, 1);
-        day=1;
+        day = 1;
         weekDayNumber = persianDate.dayOfWeek();
         setCalendarMonthList();
     }
@@ -191,20 +191,28 @@ public class SimplePersianCalendarView extends RelativeLayout {
         isMultiSelectableDay = multiSelectableDay;
     }
 
-    public Map<String, Boolean> getSelectedDaysList() {
-        return selectedDaysList;
+    public ArrayList<String> getSelectedDaysList() {
+        ArrayList<String> dates = new ArrayList<String>(selectedDaysList.keySet());
+        return dates;
     }
 
-    public void setSelectedDaysList(Map<String, Boolean> selectedDays) {
-        this.selectedDaysList = selectedDays;
+    public void setSelectedDaysList(ArrayList<String> selectedDays) {
+        selectedDaysList.clear();
+        this.addSelectedDaysList(selectedDays);
     }
 
-    public void addSelectedDaysList(Map<String, Boolean> selectedDays) {
-        this.selectedDaysList.putAll(selectedDays);
+    public void addSelectedDaysList(ArrayList<String> selectedDays) {
+        for (int i = 0; i < selectedDays.size(); i++) {
+            this.addSelectedDay(selectedDays.get(i));
+        }
+    }
+
+    public void addSelectedDay(String selectedDay) {
+        selectedDaysList.put(selectedDay, true);
     }
 
     public void addSelectedDay(Date selectedDay) {
-        this.selectedDaysList.put(selectedDay.toString(), true);
+        selectedDaysList.put(selectedDay.toString(), true);
     }
 
     public interface OnSelectOneDay {

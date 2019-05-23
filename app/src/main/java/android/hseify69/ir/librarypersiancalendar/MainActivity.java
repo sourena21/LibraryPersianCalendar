@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,17 +15,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SimplePersianCalendarView calendarView=findViewById(R.id.AM_calendarView);
+        final SimplePersianCalendarView calendarView=findViewById(R.id.AM_calendarView);
+        calendarView.setMultiSelectableDay(false);
         calendarView.setOnSelectDay(new SimplePersianCalendarView.OnSelectOneDay() {
             @Override
             public void onSelectd(Date date) {
-                Log.d("ON_SELECT_DAY","selected: "+date.toString());
+                ArrayList<String> dates=calendarView.getSelectedDaysList();
+                for (int i=0;i<dates.size();i++)
+                {
+                    Log.d("SELECTED_DAYS","selected: "+dates.get(i));
+                }
             }
 
             @Override
             public void onUnselectd(Date date) {
-                Log.d("ON_SELECT_DAY","unselected: "+date.toString());
+                ArrayList<String> dates=calendarView.getSelectedDaysList();
+                for (int i=0;i<dates.size();i++)
+                {
+                    Log.d("SELECTED_DAYS","selected: "+dates.get(i));
+                }
             }
         });
+        ArrayList<String> dates=new ArrayList<>();
+        dates.add("1398/3/1");
+        dates.add("1398/3/2");
+        dates.add("1398/3/3");
+        dates.add("1398/3/4");
+        dates.add("1398/3/5");
+        dates.add("1398/3/6");
+        dates.add("1398/3/7");
+        calendarView.setSelectedDaysList(dates);
+
     }
 }

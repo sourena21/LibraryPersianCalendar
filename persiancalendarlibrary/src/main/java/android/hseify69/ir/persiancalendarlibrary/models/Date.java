@@ -2,6 +2,7 @@ package android.hseify69.ir.persiancalendarlibrary.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.util.Calendar;
 
@@ -48,6 +49,17 @@ public class Date implements Parcelable {
         month = in.readInt();
         year = in.readInt();
         isSelected = in.readByte() != 0x00;
+    }
+
+    public Date(String date) {
+        try {
+            String[] dateArr = date.split("/");
+            year = Integer.parseInt(dateArr[0]);
+            month = Integer.parseInt(dateArr[1]);
+            mounthDay = Integer.parseInt(dateArr[2]);
+        } catch (Exception e) {
+            Log.d("PARSING_DATE_OBJECT", "error: " + e.toString());
+        }
     }
 
     @Override
