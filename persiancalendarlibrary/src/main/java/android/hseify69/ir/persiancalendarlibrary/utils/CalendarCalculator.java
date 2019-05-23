@@ -1,5 +1,6 @@
 package android.hseify69.ir.persiancalendarlibrary.utils;
 
+import android.hseify69.ir.persiancalendarlibrary.R;
 import android.hseify69.ir.persiancalendarlibrary.models.Date;
 
 import java.util.ArrayList;
@@ -71,34 +72,34 @@ public class CalendarCalculator {
         }
     }
 
-    public static String getMonthName(int month) {
+    public static int getMonthName(int month) {
         switch (month) {
             case 1:
-                return "فروردین";
+                return R.string.month_farvardin;
             case 2:
-                return "اردیبهشت";
+                return R.string.month_ordibehesht;
             case 3:
-                return "خرداد";
+                return R.string.month_khordad;
             case 4:
-                return "تیر";
+                return R.string.month_tir;
             case 5:
-                return "مرداد";
+                return R.string.month_mordad;
             case 6:
-                return "شهریور";
+                return R.string.month_shahrivar;
             case 7:
-                return "مهر";
+                return R.string.month_mehr;
             case 8:
-                return "آبان";
+                return R.string.month_aban;
             case 9:
-                return "آذر";
+                return R.string.month_azar;
             case 10:
-                return "دی";
+                return R.string.month_dey;
             case 11:
-                return "بهمن";
+                return R.string.month_bahman;
             case 12:
-                return "اسفند";
+                return R.string.month_esfand;
             default:
-                return "فروردین";
+                return R.string.month_farvardin;
         }
     }
 }

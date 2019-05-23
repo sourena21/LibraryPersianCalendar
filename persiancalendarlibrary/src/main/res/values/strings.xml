@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PersianCalendarLibrary</string>
+        <string name="month_farvardin">فروردین</string>
+        <string name="month_ordibehesht">اردیبهشت</string>
+        <string name="month_khordad">خرداد</string>
+        <string name="month_tir">تیر</string>
+        <string name="month_mordad">مرداد</string>
+        <string name="month_shahrivar">شهریور</string>
+        <string name="month_mehr">مهر</string>
+        <string name="month_aban">آبان</string>
+        <string name="month_azar">آذر</string>
+        <string name="month_dey">دی</string>
+        <string name="month_bahman">بهمن</string>
+        <string name="month_esfand">اسفند</string>
 </resources>

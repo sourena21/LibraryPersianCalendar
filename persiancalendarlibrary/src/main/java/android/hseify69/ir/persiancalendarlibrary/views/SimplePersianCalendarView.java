@@ -100,7 +100,7 @@ public class SimplePersianCalendarView extends RelativeLayout {
     }
 
     private void setCalendarMonthList() {
-        txtMounthYear.setText(CalendarCalculator.getMonthName(month) + "  " + year);
+        txtMounthYear.setText(getResources().getString(CalendarCalculator.getMonthName(month)) + "  " + year);
         daysList = getThisMounthDaysList(year, month, day, weekDayNumber, selectedDaysList);
         adapter = new MonthDaysListAdapter(daysList);
         rclDaysList.setAdapter(adapter);
@@ -144,7 +144,7 @@ public class SimplePersianCalendarView extends RelativeLayout {
         } else {
             month++;
         }
-        txtMounthYear.setText(CalendarCalculator.getMonthName(month) + "  " + year);
+        txtMounthYear.setText(getResources().getString(CalendarCalculator.getMonthName(month)) + "  " + year);
     }
 
     private void setPreviosMonth() {
@@ -163,7 +163,7 @@ public class SimplePersianCalendarView extends RelativeLayout {
         } else {
             month--;
         }
-        txtMounthYear.setText(CalendarCalculator.getMonthName(month) + "  " + year);
+        txtMounthYear.setText(getResources().getString(CalendarCalculator.getMonthName(month)) + "  " + year);
     }
 
     private void clearDaysList() {
