@@ -1,23 +1,6 @@
 apply plugin: 'com.android.library'
-
-
-ext {
-    bintrayRepo = 'persiancalendarlibrary' // your repo name
-    bintrayName = 'persiancalendarlibrary' // has to be same as your library module name
-    publishedGroupId = 'android.hseify69.ir.persiancalendarlibrary' // your module package name
-    libraryName = 'persiancalendarlibrary'
-    artifact = 'persiancalendarlibrary' // has to be same as your library module name
-    libraryDescription = 'no description'
-    siteUrl = 'https://github.com/sourena21/LibraryPersianCalendar'
-    gitUrl = 'https://github.com/sourena21/LibraryPersianCalendar.git'
-    libraryVersion = '1.2'
-    developerId = 'cyness2016'
-    developerName = 'hamed seify'
-    developerEmail = 'cyness2016@gmail.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.sourena21'
 
 android {
     compileSdkVersion 28
@@ -25,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.2"
+        versionCode 3
+        versionName "1.3"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -48,6 +31,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
