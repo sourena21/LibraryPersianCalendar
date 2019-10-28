@@ -1,49 +1,38 @@
 # LibraryPersianCalendar
 
+[![](https://jitpack.io/v/sourena21/LibraryPersianCalendar.svg)](https://jitpack.io/#sourena21/LibraryPersianCalendar)
+
 it is a simple android persian calendarview and datepicker. you can simply install by add below code in project build.gradle:
 ```
-repositories {
-        ...
-        mavenCentral()
-        ...
-    }
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 and add below code in module build.gradle:
 ```
-apply plugin: 'com.android.application'
-
-android {
-    ...
-    defaultConfig {
-        ...
-    }
-    buildTypes {
-        release {
-            ...
-        }
-    }
-}
-
 dependencies {
-    ...
-    **compile 'android.hseify69.ir.persiancalendarlibrary:persiancalendarlibrary:1.2'**
-    ...
-}
+	        implementation 'com.github.sourena21:LibraryPersianCalendar:Tag'
+	}
 ```
+
+remember to replace lib version from top of readme with tag in link above!
 
 # How to use it?
 
 add xml code like below in your layout:
 ```
 <android.hseify69.ir.persiancalendarlibrary.views.SimplePersianCalendarView
-        android:id="@+id/AM_calendarView"
+        android:id="@+id/id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 ```
 and init like below code in your java class:
 ```
         //define calendar object
-        final SimplePersianCalendarView calendarView=findViewById(R.id.AM_calendarView);
+        final SimplePersianCalendarView calendarView=findViewById(R.id.id);
 
         //you can initialize with special date and selected days
         calendarView.init();
